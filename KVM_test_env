@@ -24,6 +24,17 @@ virt-clone --original yagna --name namaha --file /var/kvm/images/namaha.img
 virt-clone --original yagna --name prajapati --file /var/kvm/images/prajapati.img
 virsh start <name>
 
+systemctl stop firewalld
+systemctl disable firewalld 
+hostnamectl set-hostname <name>
+hostnamectl status
+vi /etc/selinux/config  # SELINUX=disabled
+yum -y update
+yum install net-tools
+reboot
+
+vi /etc/sysconfig/network-scripts/ifcfg-eth0
+
 
 sources:
 http://www.server-world.info/en/note?os=CentOS_7&p=kvm&f=1
