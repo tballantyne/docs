@@ -22,7 +22,8 @@ virt-clone --original yagna --name budhi --file /var/kvm/images/budhi.img
 virt-clone --original yagna --name jana --file /var/kvm/images/jana.img
 virt-clone --original yagna --name namaha --file /var/kvm/images/namaha.img
 virt-clone --original yagna --name prajapati --file /var/kvm/images/prajapati.img
-virsh start <name>
+virsh start <guestname>
+virsh autostart <guestname>
 
 systemctl stop firewalld
 systemctl disable firewalld 
