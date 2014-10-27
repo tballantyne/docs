@@ -1,6 +1,7 @@
 systemctl stop firewalld 
 systemctl disable firewalld 
-vi /etc/selinux/config 
+vi /etc/selinux/config
+  SELINUX=disabled
 reboot
 systemctl stop NetworkManager
 systemctl disable NetworkManager
@@ -10,7 +11,14 @@ yum -y install net-tools bind-utils
 ifconfig
 ls /etc/sysconfig/network-scripts/
 vi /etc/sysconfig/network-scripts/ifcfg-eth0
-vi /etc/default/grub 
+  BOOTPROTO=none
+  IPADDR=xx.xx.xx.xx
+  NETMASK=xx.xx.xx.xx
+  GATEWAY=xx.xx.xx.xx
+  DNS1=xx.xx.xx.xx
+  DNS2=xx.xx.xx.xx
+vi /etc/default/grub
+  GRUB_CMDLINE_LINUX="ipv6.disable=1...."
 grub2-mkconfig -o /boot/grub2/grub.cfg 
 hostnamectl status
 hostnamectl set-hostname <guestname>.persimmon.local # need to change this to <guestname>.basswaves.com
