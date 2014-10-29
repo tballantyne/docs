@@ -7,7 +7,7 @@ systemctl stop NetworkManager
 systemctl disable NetworkManager
 systemctl restart network
 chkconfig network on
-yum -y install net-tools bind-utils vim
+yum -y install net-tools bind-utils vim wget
 ifconfig
 ls /etc/sysconfig/network-scripts/
 vi /etc/sysconfig/network-scripts/ifcfg-eth0
