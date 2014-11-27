@@ -1,0 +1,6 @@
+yum -y install yum-cron
+sudo vi /etc/yum/yum-cron.conf
+  apply_updates = yes
+systemctl start yum-cron.service
+
+http://linuxaria.com/howto/enabling-automatic-updates-in-centos-7-and-rhel-7
