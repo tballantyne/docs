@@ -1,3 +1,17 @@
+# generate key
+
+ssh-keygen -t rsa
+chmod 700 ~/.ssh
+chmod 600 ~/.ssh/id_rsa
+
+# deploy key
+# scp the id_rsa.pub to target host
+
+cat id_rsa.pub >> ~/.ssh/authorized_keys
+rm id_rsa.pub
+
+# disable ssh
+
 /etc/ssh/sshd_config
 
 ChallengeResponseAuthentication no
@@ -8,13 +22,5 @@ PermitRootLogin no
 AllowUsers <user1> <user2>
 
 /bin/systemctl restart  sshd.service
-
-ssh-keygen -t rsa
-chmod 700 ~/.ssh
-chmod 600 ~/.ssh/id_rsa
-
-scp the id_rsa.pub to target host
-cat id_rsa.pub >> ~/.ssh/authorized_keys
-rm id_rsa.pub
 
 http://wiki.centos.org/HowTos/Network/SecuringSSH#head-9c01429983dccbf74ade8674815980dc6434d3ba
