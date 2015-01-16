@@ -1,0 +1,31 @@
+gpg --keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3
+\curl -sSL https://get.rvm.io | bash -s stable --ruby
+source ~/.rvm/scripts/rvm
+
+sudo yum install -y sqlite-devel.x86_64 libdbi-dbd-sqlite.x86_64 libxml2-devel.x86_64 libxslt-devel.x86_64 sqlite-devel
+
+curl -sL https://rpm.nodesource.com/setup | bash -
+yum install -y nodejs
+yum groupinstall 'Development Tools'
+wget http://nodejs.org/dist/node-latest.tar.gz
+tar xvfvz node-latest.tar.gz
+
+cd node-v0.10.35 
+./configure
+make
+sudo make install
+
+sudo yum install -y postgresql.x86_64 postgresql-devel.x86_64 postgresql-libs.x86_64
+
+gem install rails
+gem install sqlite3
+rvm 2.2.0 do gem install jquery-rails
+
+Steps taken to test:
+source ~/.bashrc
+cd ~
+mkdir <rails_project>
+cd <rails_project>
+rails new <test_app>
+rails server
+browse to localhost:3000
