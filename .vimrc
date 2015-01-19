@@ -18,3 +18,4 @@ set cindent
 set autoindent
 set smarttab
 set expandtab
+set paste
