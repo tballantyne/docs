@@ -2,6 +2,11 @@
 
 ### Default ###
 
+# The section below is via the mc UI -
+# Press F9 (or Esc followed by 9) to active the top menu. From command menu → select “Edit extension file”  
+# http://www.cyberciti.biz/tips/midnightcommander-set-vi-as-default-editor-viewer.html
+#
+
 # Default target for anything not described above
   default/*
   Open=%var{EDITOR:vi} %f
