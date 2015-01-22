@@ -30,7 +30,7 @@ rvm 2.2.0 do gem install jquery-rails
 Steps taken to test:
 source ~/.bashrc
 cd ~
-mkdir <rails_project>
+mkdir <rails_projects>
 cd <rails_project>
 rails new <test_app>
 rails server
