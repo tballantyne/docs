@@ -17,6 +17,12 @@ sudo make install
 
 sudo yum install -y postgresql.x86_64 postgresql-devel.x86_64 postgresql-libs.x86_64
 
+###
+vi ~/.gemrc 
+install: --no-rdoc --no-ri 
+update: --no-rdoc --no-ri 
+###
+
 gem install rails
 gem install sqlite3
 rvm 2.2.0 do gem install jquery-rails
