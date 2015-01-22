@@ -33,5 +33,6 @@ cd ~
 mkdir <rails_projects>
 cd <rails_project>
 rails new <test_app>
+cd <test_app>
 rails server
 browse to localhost:3000
