@@ -10,6 +10,13 @@ chmod 600 ~/.ssh/id_rsa
 cat id_rsa.pub >> ~/.ssh/authorized_keys
 rm id_rsa.pub
 
+or
+
+ssh-keygen -t rsa
+ssh-copy-id -i ~/.ssh/id_rsa.pub remote-host
+ssh remote-host
+
+
 # disable ssh
 
 /etc/ssh/sshd_config
