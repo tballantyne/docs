@@ -1,0 +1,6 @@
+useradd <username>
+visudo
+usermod -G10 <username>
+sudo passwd <username>
+su - <username>
+whoami
