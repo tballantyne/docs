@@ -19,3 +19,4 @@ set autoindent
 set smarttab
 set expandtab
 set paste
+:highlight Comment ctermfg=darkgrey
