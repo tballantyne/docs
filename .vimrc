@@ -20,5 +20,4 @@ set smarttab
 set expandtab
 set paste
 hi Comment ctermfg=darkgrey
-syntax on
-  :set highlight Comment ctermfg=darkgrey
+
