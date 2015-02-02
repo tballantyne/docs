@@ -27,6 +27,12 @@ gem install rails
 gem install sqlite3
 rvm 2.2.0 do gem install jquery-rails
 
+###
+
+sudo iptables -I INPUT -p tcp -m tcp --dport 80 -j ACCEPT
+sudo service iptables save
+
+
 Steps taken to test:
 source ~/.bashrc
 cd ~
@@ -36,3 +42,4 @@ rails new <test_app>
 cd <test_app>
 rails server
 browse to localhost:3000
+
