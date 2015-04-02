@@ -49,8 +49,12 @@ git config --global user.name "First Last"
 git config --global user.email user@domain.com
 git config --global core.editor vim
 
+# http://git-scm.com/book/en/v2
+
 
 git clone git://source.ffmpeg.org/ffmpeg.git ffmpeg
 yum install autoconf automake gcc gcc-c++ git libtool make nasm pkgconfig zlib-devel
+<continue>
 
+# https://trac.ffmpeg.org/wiki/CompilationGuide/Centos
 
