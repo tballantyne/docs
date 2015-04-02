@@ -16,7 +16,6 @@ alternatives --install /usr/bin/javac javac /usr/java/jdk1.8.0_40/bin/javac 2000
 alternatives --install /usr/bin/jar jar /usr/java/jdk1.8.0_40/bin/jar 200000
 
 alternatives --install /usr/bin/java java /usr/java/jre1.8.0_40/bin/java 200000
-alternatives --install /usr/bin/javaws javaws /usr/java/jre1.8.0_40/bin/javaws 200000
  
 java -version
 javaws
@@ -31,3 +30,27 @@ export JAVA_HOME="/usr/java/jdk1.8.0_40"
 export JAVA_HOME="/usr/java/jre1.8.0_40"
 
 # http://www.if-not-true-then-false.com/2014/install-oracle-java-8-on-fedora-centos-rhel/
+
+which java
+file $(which java)
+file /etc/alternatives/java
+file /usr/java/jdk1.8.0_40/jre/bin/java
+export JAVA_HOME="/usr/java/jdk1.8.0_40/jre/bin/java"
+export EC2_HOME=/usr/local/ec2/ec2-api-tools-1.7.3.2
+export PATH=$PATH:$EC2_HOME/bin
+<continue>
+
+# http://docs.aws.amazon.com/AWSEC2/latest/CommandLineReference/set-up-ec2-cli-linux.html#setting_up_ec2_command_linux
+
+
+yum -y install git
+git clone git://git.kernel.org/pub/scm/git/git.git
+git config --global user.name "First Last"
+git config --global user.email user@domain.com
+git config --global core.editor vim
+
+
+git clone git://source.ffmpeg.org/ffmpeg.git ffmpeg
+yum install autoconf automake gcc gcc-c++ git libtool make nasm pkgconfig zlib-devel
+
+
