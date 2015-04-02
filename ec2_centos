@@ -1,0 +1,33 @@
+sudo -i
+yum -y update
+yum -y install net-tools bind-utils vim wget yum-cron unzip
+sed -i 's/apply_updates = no/apply_updates = yes/' /etc/yum/yum-cron.conf
+systemctl start yum-cron.service
+systemctl status yum-cron.service
+wget http://s3.amazonaws.com/ec2-downloads/ec2-api-tools.zip
+mkdir /usr/local/ec2
+unzip ec2-api-tools.zip -d /usr/local/ec2
+
+scp -i /<path>/key.pem ~/Downloads/jdk-8u40-linux-x64.rpm centos@xx.xx.xx.xx:
+rpm -Uvh ~/jdk-8u40-linux-x64.rpm
+alternatives --install /usr/bin/java java /usr/java/jdk1.8.0_40/jre/bin/java 200000
+alternatives --install /usr/bin/javaws javaws /usr/java/jdk1.8.0_40/jre/bin/javaws 200000
+alternatives --install /usr/bin/javac javac /usr/java/jdk1.8.0_40/bin/javac 200000
+alternatives --install /usr/bin/jar jar /usr/java/jdk1.8.0_40/bin/jar 200000
+
+alternatives --install /usr/bin/java java /usr/java/jre1.8.0_40/bin/java 200000
+alternatives --install /usr/bin/javaws javaws /usr/java/jre1.8.0_40/bin/javaws 200000
+ 
+java -version
+javaws
+javac -version
+
+alternatives --config java
+alternatives --config javaws
+alternatives --config libjavaplugin.so.x86_64
+alternatives --config javac
+
+export JAVA_HOME="/usr/java/jdk1.8.0_40"
+export JAVA_HOME="/usr/java/jre1.8.0_40"
+
+# http://www.if-not-true-then-false.com/2014/install-oracle-java-8-on-fedora-centos-rhel/
