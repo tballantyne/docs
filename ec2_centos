@@ -165,5 +165,9 @@ hash -r
 
 # https://trac.ffmpeg.org/wiki/CompilationGuide/Centos
 
+#
+#### Verify RTMP streams ###
+#
+
 FFREPORT=file=ffreport_emea.log:level=40 ffmpeg -i <rtmp stream> -f null /dev/null
 
