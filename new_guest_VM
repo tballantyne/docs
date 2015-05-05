@@ -25,3 +25,11 @@ hostnamectl set-hostname <guestname>.persimmon.local # need to change this to <g
 hostnamectl status
 reboot
 yum -y update
+
+# user add
+useradd <username>
+visudo
+usermod -G10 <username>
+sudo passwd <username>
+su - <username>
+whoami
