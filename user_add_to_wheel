@@ -1,5 +1,6 @@
 useradd <username>
 visudo
+# uncomment out %wheel ALL=(ALL) ALL
 usermod -G10 <username>
 sudo passwd <username>
 su - <username>
